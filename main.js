@@ -49,12 +49,12 @@ function checkInputs() {
 	//phone number
 	if(numberValue === '') {
 		setErrorFor(number, 'Phone number cannot be blank');
-	} else if (number.value.substr(0, 1).includes('+') ) {
-        setSuccessFor(number, "Input a valid number");
-    } else if(numberValue.length == 14) {
-		setSuccessFor(number, 'Phone number cannot be less than 14 digits');
-	} else {
-        setErrorFor(number, 'Phone number must be 14digits and contain "+"')
+	} else if (number.value.substr(0, 1).includes('+') && numberValue.length == 14) {
+        setSuccessFor(number);
+    } /*else if(numberValue.length == 14) {
+		setSuccessFor(number);
+	}*/ else {
+        setErrorFor(number, 'Phone number must be 14 digits and contain "+"')
     }
 }
 // error message
